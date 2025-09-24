@@ -25,7 +25,6 @@ export default defineConfig([
       camelcase: 'off',
       'prefer-rest-params': 'off',
       'no-var': 'error',
-      semi: 'error',
       'no-multi-spaces': 'error',
       'space-in-parens': 'error',
       'no-multiple-empty-lines': 'error',
