@@ -1,3 +1,4 @@
+import type { ButtonHTMLAttributes } from 'react';
 interface VariantClasses {
   [key: string]: string;
 }
@@ -7,19 +8,20 @@ const variants: VariantClasses = {
   secondary: 'bg-gray-500  hover:bg-gray-600',
 };
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   variant?: keyof typeof variants;
-  onClick: () => void;
 }
 
 export const Button = ({
+  type,
   label,
   variant = 'primary',
   onClick,
 }: ButtonProps) => (
   <button
-    className={`px-4 py-2 rounded text-white ${variants[variant]}`}
+    type={type}
+    className={`px-4 py-2 rounded text-white cursor-pointer ${variants[variant]}`}
     onClick={onClick}
   >
     {label}

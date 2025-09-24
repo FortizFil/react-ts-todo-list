@@ -3,15 +3,15 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 
 import { PATH } from './paths';
 
-const TasksPage = lazy(() => import('@modules/tasks/screens/tasks'));
-const TaskDetailPage = lazy(() => import('@modules/tasks/screens/task-detail'));
+const TodosPage = lazy(() => import('@modules/todos'));
+const TodoDetailPage = lazy(() => import('@modules/todo-detail'));
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TasksPage />} />
-        <Route path={PATH.TaskDetail()} element={<TaskDetailPage />} />
+        <Route path="/" element={<TodosPage />} />
+        <Route path={PATH.TodoDetail()} element={<TodoDetailPage />} />
       </Routes>
     </BrowserRouter>
   );
