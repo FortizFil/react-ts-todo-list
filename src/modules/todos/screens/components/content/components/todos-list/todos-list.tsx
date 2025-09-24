@@ -1,5 +1,5 @@
 import { useTodos } from '@modules/todos/providers';
-import { Empty, TodoItem } from './components';
+import { Empty, TodoItem, Filters } from './components';
 
 export const TodosList = () => {
   const { todos, toggleTodo, removeTodo, openModal } = useTodos();
@@ -7,7 +7,8 @@ export const TodosList = () => {
   if (!todos.length) return <Empty />;
 
   return (
-    <div>
+    <div className="flex flex-col gap-[15px]">
+      <Filters />
       <ul className="space-y-3">
         {todos.map(todo => (
           <TodoItem

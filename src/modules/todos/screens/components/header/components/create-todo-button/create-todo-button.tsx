@@ -1,8 +1,8 @@
 import { Button } from '@common/ui-kit';
 import { useTodos } from '@modules/todos/providers';
 
-export const CreateTaskButton = () => {
+export const CreateTodoButton = () => {
   const { openModal } = useTodos();
 
-  return <Button label="Create task" onClick={() => openModal()} />;
+  return <Button label="+ Add todo" onClick={() => openModal()} />;
 };
