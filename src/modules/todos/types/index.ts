@@ -10,7 +10,7 @@ export interface TodosControllerType {
   initialData: TodoFormData | null;
   showModal: boolean;
   filter: FilterEnum;
-  manageTodo: (data: TodoFormData) => void;
+  saveTodo: (data: TodoFormData) => void;
   toggleTodo: (id: number) => void;
   removeTodo: (id: number) => void;
   openModal: (id?: number) => void;

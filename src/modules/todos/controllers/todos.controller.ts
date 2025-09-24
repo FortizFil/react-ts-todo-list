@@ -10,7 +10,7 @@ export const useTodosController = (): TodosControllerType => {
   const [filter, setFilter] = useState<FilterEnum>(FilterEnum.ALL);
   const [showModal, setShowModal] = useState(false);
 
-  const manageTodo = (data: TodoFormData) => {
+  const saveTodo = (data: TodoFormData) => {
     if (initialData) {
       setTodos(
         todos.map(todo =>
@@ -74,7 +74,7 @@ export const useTodosController = (): TodosControllerType => {
     initialData,
     showModal,
     filter,
-    manageTodo,
+    saveTodo,
     toggleTodo,
     removeTodo,
     openModal,

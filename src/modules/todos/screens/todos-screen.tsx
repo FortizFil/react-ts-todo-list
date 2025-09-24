@@ -3,7 +3,7 @@ import { useTodos } from '../providers';
 import { Header, Content } from './components';
 
 export const TodosScreen = () => {
-  const { showModal, closeModal, manageTodo, initialData } = useTodos();
+  const { showModal, closeModal, saveTodo, initialData } = useTodos();
 
   return (
     <>
@@ -13,7 +13,7 @@ export const TodosScreen = () => {
         <TodoFormModal
           defaultValues={initialData ? initialData : undefined}
           onClose={closeModal}
-          onSubmit={manageTodo}
+          onSubmit={saveTodo}
         />
       )}
     </>

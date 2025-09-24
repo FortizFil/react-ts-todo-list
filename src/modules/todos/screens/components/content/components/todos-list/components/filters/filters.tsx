@@ -19,6 +19,7 @@ const FILTERS = [
 
 export const Filters = () => {
   const { filter, setFilter } = useTodos();
+
   return (
     <div className="flex items-center gap-[5px]">
       {FILTERS.map(el => (

@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from 'react';
+
 interface VariantClasses {
   [key: string]: string;
 }
