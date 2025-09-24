@@ -9,7 +9,10 @@ export default defineConfig({
   publicDir: 'public',
   resolve: {
     alias: {
+      '@app': path.resolve(__dirname, './src/app'),
       '@common': path.resolve(__dirname, './src/common'),
+      '@modules': path.resolve(__dirname, './src/modules'),
+      '@router': path.resolve(__dirname, './src/router'),
     },
   },
 });
