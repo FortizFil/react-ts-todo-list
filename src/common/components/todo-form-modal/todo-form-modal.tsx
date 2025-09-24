@@ -1,6 +1,6 @@
 import { Controller, useForm } from 'react-hook-form';
 
-import { Modal, Input, Button } from '@common/ui-kit';
+import { Modal, Input, Button, Textarea } from '@common/ui-kit';
 import type { TodoFormData } from '@modules/todos/types/types';
 
 interface TodoFormModalProps {
@@ -44,7 +44,7 @@ export const TodoFormModal = ({
           control={control}
           rules={{ required: 'Please, fill out this field' }}
           render={({ field, formState: { errors } }) => (
-            <Input
+            <Textarea
               id={field.name}
               placeholder="Todo description"
               errorMessage={errors.text?.message}

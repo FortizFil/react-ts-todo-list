@@ -19,17 +19,11 @@ export const Checkbox = ({ checked, onChange }: CheckboxProps) => {
               transition-colors
             "
       >
-        <svg
-          className={`w-3 h-3 text-white transition-opacity ${
+        <i
+          className={`mt-[0px] text-[24px] leading-[1] static text-white ri-check-line  ${
             checked ? 'opacity-100' : 'opacity-0'
           }`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={3}
-          viewBox="0 0 24 24"
-        >
-          <path d="M5 13l4 4L19 7" />
-        </svg>
+        />
       </span>
     </label>
   );

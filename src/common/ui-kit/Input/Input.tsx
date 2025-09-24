@@ -6,7 +6,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ id, value, placeholder, onChange, errorMessage }, ref) => (
+  ({ id, value = '', placeholder, onChange, errorMessage }, ref) => (
     <div className="flex flex-col gap-[5px]">
       <input
         ref={ref}

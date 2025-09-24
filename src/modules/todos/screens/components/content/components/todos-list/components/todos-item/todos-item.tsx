@@ -1,7 +1,8 @@
+import { useNavigate } from 'react-router';
+
+import { PATH } from '@router';
 import { Checkbox, IconButton } from '@common/ui-kit';
 import type { Todo } from '@modules/todos/types/types';
-import { PATH } from '@router';
-import { Link } from 'react-router';
 
 interface TodosItemProps {
   todo: Todo;
@@ -16,30 +17,31 @@ export const TodosItem = ({
   removeTodo,
   openModal,
 }: TodosItemProps) => {
+  const navigate = useNavigate();
+
+  const handleOpenDetailPage = () => navigate(PATH.TodoDetail(todo.id));
+
   return (
-    <li className="flex justify-between items-center bg-white shadow rounded-lg p-4">
-      <Link to={PATH.TodoDetail(todo.id)}>
-        <div className="flex items-center gap-[16px]">
-          <Checkbox
-            checked={todo.completed}
-            onChange={() => toggleTodo(todo.id)}
-          />
-          <div>
-            <h4 className="font-semibold">{todo.title}</h4>
-            <p className="text-sm text-gray-500">{todo.text}</p>
-          </div>
-        </div>
-        <div className="flex items-center gap-[10px]">
-          <IconButton
-            icon="ri-pencil-line"
-            onClick={() => openModal(todo.id)}
-          />
-          <IconButton
-            icon="ri-delete-bin-6-line"
-            onClick={() => removeTodo(todo.id)}
-          />
-        </div>
-      </Link>
+    <li className="flex justify-between items-center p-4 bg-white shadow rounded-lg ">
+      <div className="flex items-center gap-[16px]">
+        <Checkbox
+          checked={todo.completed}
+          onChange={() => toggleTodo(todo.id)}
+        />
+        <h4
+          className={`font-semibold ${todo.completed ? 'line-through text-gray-400' : ''}`}
+        >
+          {todo.title}
+        </h4>
+      </div>
+      <div className="flex items-center gap-[10px]">
+        <IconButton icon="ri-eye-line" onClick={handleOpenDetailPage} />
+        <IconButton icon="ri-pencil-line" onClick={() => openModal(todo.id)} />
+        <IconButton
+          icon="ri-delete-bin-6-line"
+          onClick={() => removeTodo(todo.id)}
+        />
+      </div>
     </li>
   );
 };
