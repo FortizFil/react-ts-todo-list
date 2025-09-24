@@ -5,5 +5,11 @@ export const Description = () => {
 
   if (!todo) return null;
 
-  return <p className="text-lg ">{todo.text}</p>;
+  return (
+    <p
+      className={`text-lg ${todo.completed ? 'line-through text-gray-400' : ''}`}
+    >
+      {todo.text}
+    </p>
+  );
 };
