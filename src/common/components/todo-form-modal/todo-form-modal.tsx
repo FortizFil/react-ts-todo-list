@@ -1,7 +1,7 @@
 import { Controller, useForm } from 'react-hook-form';
 
 import { Modal, Input, Button, Textarea } from '@common/ui-kit';
-import type { TodoFormData } from '@modules/todos/types/types';
+import type { TodoFormData } from '@common/types';
 
 interface TodoFormModalProps {
   defaultValues?: TodoFormData;
@@ -32,7 +32,7 @@ export const TodoFormModal = ({
           render={({ field, formState: { errors } }) => (
             <Input
               id={field.name}
-              placeholder="Todo name"
+              placeholder="Title"
               errorMessage={errors.title?.message}
               {...field}
             />
@@ -46,7 +46,7 @@ export const TodoFormModal = ({
           render={({ field, formState: { errors } }) => (
             <Textarea
               id={field.name}
-              placeholder="Todo description"
+              placeholder="Description"
               errorMessage={errors.text?.message}
               {...field}
             />

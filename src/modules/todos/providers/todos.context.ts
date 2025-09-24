@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import type { TodosControllerType } from '@modules/todos/types/types';
+import type { TodosControllerType } from '@modules/todos/types';
 
 export const TodosContext = createContext<TodosControllerType | null>(null);
 

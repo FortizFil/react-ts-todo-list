@@ -1,5 +1,10 @@
+import { TodoDetailProvider } from './providers';
 import { TodoDetailScreen } from './screens';
 
-const TodoDetail = () => <TodoDetailScreen />;
+const TodoDetail = () => (
+  <TodoDetailProvider>
+    <TodoDetailScreen />
+  </TodoDetailProvider>
+);
 
 export default TodoDetail;

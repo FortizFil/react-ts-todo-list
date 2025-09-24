@@ -7,10 +7,8 @@ export const TodosScreen = () => {
 
   return (
     <>
-      <div className="p-6 max-w-3xl mx-auto h-screen flex flex-col gap-[20px]">
-        <Header />
-        <Content />
-      </div>
+      <Header />
+      <Content />
       {showModal && (
         <TodoFormModal
           defaultValues={initialData ? initialData : undefined}

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router';
 
 import { PATH } from '@router';
 import { Checkbox, IconButton } from '@common/ui-kit';
-import type { Todo } from '@modules/todos/types/types';
+import type { Todo } from '@common/types';
 
 interface TodosItemProps {
   todo: Todo;

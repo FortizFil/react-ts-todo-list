@@ -1,10 +1,8 @@
-import { useStorageStateHook } from '@common/hooks';
-import type {
-  Todo,
-  TodoFormData,
-  TodosControllerType,
-} from '@modules/todos/types/types';
 import { useState } from 'react';
+
+import { useStorageStateHook } from '@common/hooks';
+import type { Todo, TodoFormData } from '@common/types';
+import type { TodosControllerType } from '@modules/todos/types';
 
 export const useTodosController = (): TodosControllerType => {
   const [todos, setTodos] = useStorageStateHook<Todo[]>([], 'todos');

@@ -1,15 +1,4 @@
-export interface Todo {
-  id: number;
-  title: string;
-  text: string;
-  completed: boolean;
-}
-
-export interface TodoFormData {
-  id?: number;
-  title: string;
-  text: string;
-}
+import type { Todo, TodoFormData } from '@common/types';
 
 export interface TodosControllerType {
   todos: Todo[];
@@ -18,6 +7,6 @@ export interface TodosControllerType {
   manageTodo: (data: TodoFormData) => void;
   toggleTodo: (id: number) => void;
   removeTodo: (id: number) => void;
-  openModal: () => void;
+  openModal: (id?: number) => void;
   closeModal: () => void;
 }
