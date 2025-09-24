@@ -4,19 +4,19 @@ import { PATH } from '@router';
 import { Checkbox, IconButton } from '@common/ui-kit';
 import type { Todo } from '@common/types';
 
-interface TodosItemProps {
+interface TodoItemProps {
   todo: Todo;
   toggleTodo: (id: number) => void;
   removeTodo: (id: number) => void;
   openModal: (id?: number) => void;
 }
 
-export const TodosItem = ({
+export const TodoItem = ({
   todo,
   toggleTodo,
   removeTodo,
   openModal,
-}: TodosItemProps) => {
+}: TodoItemProps) => {
   const navigate = useNavigate();
 
   const handleOpenDetailPage = () => navigate(PATH.TodoDetail(todo.id));
@@ -29,7 +29,7 @@ export const TodosItem = ({
           onChange={() => toggleTodo(todo.id)}
         />
         <h4
-          className={`font-semibold ${todo.completed ? 'line-through text-gray-400' : ''}`}
+          className={`line-clamp-1 font-semibold ${todo.completed ? 'line-through text-gray-400' : ''}`}
         >
           {todo.title}
         </h4>

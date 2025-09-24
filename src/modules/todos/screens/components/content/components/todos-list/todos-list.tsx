@@ -1,5 +1,5 @@
 import { useTodos } from '@modules/todos/providers';
-import { Empty, TodosItem } from './components';
+import { Empty, TodoItem } from './components';
 
 export const TodosList = () => {
   const { todos, toggleTodo, removeTodo, openModal } = useTodos();
@@ -10,7 +10,7 @@ export const TodosList = () => {
     <div>
       <ul className="space-y-3">
         {todos.map(todo => (
-          <TodosItem
+          <TodoItem
             key={todo.id}
             todo={todo}
             toggleTodo={toggleTodo}
